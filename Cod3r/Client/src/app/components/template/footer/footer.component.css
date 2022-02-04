@@ -1,0 +1,17 @@
+.footer .red{
+    color: rgb(227, 94, 107);
+}
+.footer .v-middle {
+    vertical-align: middle;
+}
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+}

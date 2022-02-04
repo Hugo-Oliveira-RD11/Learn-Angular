@@ -2,11 +2,27 @@
 
 <table>
     <tr>
-        <th>Id</th>
-        <th>Title</th>
+        <th>Id | </th>
+        <th>Title | </th>
         <th>Done</th>
     </tr>
     <tr *ngFor="let todo of todos">
-        <th>{{todo}}</th>
+        <th>{{todo.id}} | </th>
+        <th>{{todo.title}} | </th>
+        <th>{{todo.done}}</th>
+        <td>
+            <button type="button" (click)="deleteTodo(todo)">delete</button>
+        </td>
     </tr>
 </table>
+<hr>
+
+<form (ngSubmit)="f.form.valid && postTodo(f)" #f="ngForm" novalidate>
+    <label for="id">Id</label>
+    <input type="number" name="id" id="id" [(ngModel)]="todo.id" required #id="ngModel">
+    <label for="title">Title</label>
+    <input type="text" name="title" [(ngModel)]="todo.title" #title="ngModel" required placeholder="digite o titulo...">
+    <label for="done">Done</label>
+    <input type="checkbox" name="done" id="done" [(ngModel)]="todo.done" #done="ngModel">
+    <button type="submit" >Salvar</button>
+</form>
